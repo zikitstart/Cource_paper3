@@ -1,0 +1,35 @@
+{
+  "id": 6,
+  "socksFileMap": {
+    "1": {
+      "color": "Black",
+      "size": "Size38",
+      "cottonPart": 40,
+      "quantityInStock": 15
+    },
+    "2": {
+      "color": "Black",
+      "size": "Size38",
+      "cottonPart": 50,
+      "quantityInStock": 90
+    },
+    "3": {
+      "color": "Black",
+      "size": "Size41",
+      "cottonPart": 60,
+      "quantityInStock": 40
+    },
+    "4": {
+      "color": "Red",
+      "size": "Size39",
+      "cottonPart": 80,
+      "quantityInStock": 40
+    },
+    "5": {
+      "color": "White",
+      "size": "Size41",
+      "cottonPart": 40,
+      "quantityInStock": 70
+    }
+  }
+}
