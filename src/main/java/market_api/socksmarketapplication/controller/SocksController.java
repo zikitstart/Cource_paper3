@@ -14,7 +14,6 @@ import market_api.socksmarketapplication.service.SocksService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/socks")
@@ -57,7 +56,7 @@ public class SocksController {
                     )
             }
     )
-    public ResponseEntity<?> createSocks(@RequestParam("color") Color color, @RequestParam("size") Size size, @RequestParam int cotton, @RequestParam int quantity) {
+    public ResponseEntity<Socks> createSocks(@RequestParam("color") Color color, @RequestParam("size") Size size, @RequestParam int cotton, @RequestParam int quantity) {
         Socks socks = new Socks(color, size, cotton, quantity);
         this.socksService.addSocks(socks);
         return ResponseEntity.ok(socks);
@@ -94,8 +93,8 @@ public class SocksController {
                     )
             }
     )
-    public ResponseEntity<List<Socks>> getSocksByCotton(@RequestParam("color") Color color, @RequestParam("size") Size size, @RequestParam(value = "cottonMin", required = false, defaultValue = "0") int cottonMin, @RequestParam(value = "cottonMax", required = false, defaultValue = "100") int cottonMax) {
-        List<Socks> socks = socksService.getSocksCotton(color, size, cottonMin, cottonMax);
+    public ResponseEntity<Integer> getSocksByCotton(@RequestParam("color") Color color, @RequestParam("size") Size size, @RequestParam(value = "cottonMin", required = false, defaultValue = "0") int cottonMin, @RequestParam(value = "cottonMax", required = false, defaultValue = "100") int cottonMax) {
+        Integer socks = socksService.getSocksCotton(color, size, cottonMin, cottonMax);
         return ResponseEntity.ok(socks);
     }
 
